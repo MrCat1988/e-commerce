@@ -1,0 +1,74 @@
+html *{
+    /* font-size: 1em !important; */
+    /* color: #000 !important; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --white: #fff;
+    --black: #000;
+    --red: #FF6969;
+    --blue: #3C486B;
+    --gray: #454545;
+    --green: #57C5B6;
+    --yellow: #FEFF86;
+    --purple: #B2A4FF;
+}
+
+.topBar{
+    /* background: var(--black); */
+    color: var(--white);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.initial-banner{
+    background: #000;
+    padding: 10px;
+}
+
+ul, ol{
+    padding: 0px;
+}
+
+a, a:visited, a:ink, a:focus, a:hover, a:active {
+    list-style: none;
+    text-decoration: none;
+}
+
+.backColor, .backColor a {
+    background: var(--purple);
+    color: var(--white);
+}
+
+/* SOCIAL NETWORK */
+
+.socialNetwork {
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    color: var(--white);
+}
+
+/* HEADER */
+#top{
+    padding-top: 8px;
+}
+
+#top a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+#top ul li{
+    display: inline;
+    line-height: 30px;
+    margin: 0px 5px;
+    color: var(--white);
+}
+
