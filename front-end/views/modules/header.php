@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 register d-flex justify-content-center justify-content-sm-start">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 register d-flex justify-content-center justify-content-sm-end">
                 <ul class="float-end">
                     <li><a href="#signinModal">Log In</a></li>
                     <li>|</li>
