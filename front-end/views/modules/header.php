@@ -22,6 +22,11 @@
                     </li>
                     <li>
                         <a href="#">
+                            <i class="bi bi-youtube socialNetwork" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                             <i class="bi bi-instagram socialNetwork" aria-hidden="true"></i>
                         </a>
                     </li>
