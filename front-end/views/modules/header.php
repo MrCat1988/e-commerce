@@ -1,12 +1,23 @@
 <!-- <div class="container-fluid topBar" id="top"> -->
 
     <!-- <div class="container"> -->
+    <?php
+        $template = TemplateController::ctrTemplateStyle();
+        // echo '<pre>';
+        // var_dump($template['topBarText']);
+        // var_dump(json_decode($socialNetwork['mainBarSocialNetwork'], true));
+        // foreach (json_decode($template['mainBarSocialNetwork'], true) as $key => $value) {
+        //     var_dump($value['url']);
+        // }
+        // echo '</pre>';
+
+    ?>
 
 
     <div class="container-fluid">
         <div class="row topBar">
             <div class="col-12 initial-banner">
-                <h5>10% Off, using code "ZOEMAYO10"</h5>
+                <h5><?php echo $template['topBarText'];?></h5>
             </div>
         </div>
 
@@ -15,7 +26,18 @@
         <div class="row mainHeader" id="top">
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social d-flex justify-content-center justify-content-sm-start">
                 <ul class="float-start">
-                    <li>
+                    <?php
+                        foreach (json_decode($template['mainBarSocialNetwork'], true) as $key => $value) {
+                            echo "
+                                <li>
+                                    <a href='{$value["url"]}'>
+                                        <i class='bi {$value["network"]} socialNetwork' aria-hidden='true'></i>
+                                    </a>
+                                </li>
+                            ";
+                        }
+                    ?>
+                    <!-- <li>
                         <a href="#">
                             <i class="bi bi-facebook socialNetwork" aria-hidden="true"></i>
                         </a>
@@ -39,7 +61,7 @@
                         <a href="#">
                             <i class="bi bi-tiktok socialNetwork" aria-hidden="true"></i>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 register d-flex justify-content-center justify-content-sm-end">

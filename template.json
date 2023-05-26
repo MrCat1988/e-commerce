@@ -3,5 +3,5 @@
     {"network": "bi-youtube", "url": "https://www.youtube.com"},
     {"network": "bi-instagram", "url": "https://www.instagram.com"},
     {"network": "bi-twitter", "url": "https://www.twitter.com"},
-    {"network": "bi-tiktok", "url": "https://www.tiktok.com"},
+    {"network": "bi-tiktok", "url": "https://www.tiktok.com"}
 ]

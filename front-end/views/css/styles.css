@@ -51,7 +51,7 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 }
 
 .backColor, .backColor a {
-    background: var(--purple);
+    /* background: var(--purple); */
     color: var(--white);
 }
 
