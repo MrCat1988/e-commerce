@@ -3,13 +3,6 @@
     <!-- <div class="container"> -->
     <?php
         $template = TemplateController::ctrTemplateStyle();
-        // echo '<pre>';
-        // var_dump($template['topBarText']);
-        // var_dump(json_decode($socialNetwork['mainBarSocialNetwork'], true));
-        // foreach (json_decode($template['mainBarSocialNetwork'], true) as $key => $value) {
-        //     var_dump($value['url']);
-        // }
-        // echo '</pre>';
 
     ?>
 
@@ -37,31 +30,6 @@
                             ";
                         }
                     ?>
-                    <!-- <li>
-                        <a href="#">
-                            <i class="bi bi-facebook socialNetwork" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-youtube socialNetwork" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-instagram socialNetwork" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <i class="bi bi-twitter socialNetwork" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-tiktok socialNetwork" aria-hidden="true"></i>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 register d-flex justify-content-center justify-content-sm-end">
@@ -92,7 +60,7 @@
         <div class="col-12">
             <div class="d-flex justify-content-center" id="logo">
                 <a href="#">
-                    <img src="http://localhost/e-commerce/back-end/views/img/template/logo.png" class="img-responsive">
+                    <img src="http://localhost/e-commerce/back-end/<?php echo $template["icon"]; ?>" class="img-responsive">
                 </a>
             </div>
 

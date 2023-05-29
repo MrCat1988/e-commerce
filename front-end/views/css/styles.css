@@ -101,7 +101,7 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 }
 
 #top .register ul li a:hover{
-    color: var(--cream) !important;
+    color: var(--cream);
     transition: 0.5 ease;
 }
 
