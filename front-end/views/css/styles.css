@@ -24,6 +24,125 @@ html *{
     --lead: #BACDDB;
 }
 
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+/* BACKGROUND */
+.bg{
+    background-image: url('http://localhost/e-commerce/back-end/views/img/template/background.jpg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* MENU */
+
+header{
+    /* background: var(--white); */
+    padding: 1rem;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+}
+
+header nav{
+    padding-left: 2rem;
+}
+
+header .offcanvas .offcanvas-body ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+header .offcanvas .offcanvas-body ul li:hover{
+    border-bottom: 1px solid #000;
+}
+
+header nav a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+header nav a i{
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+header nav a i:hover{
+    transition: 0.3s ease;
+    opacity: 0.5;
+}
+
+header nav img{
+    height: 1rem;
+    padding-left: 1rem;
+}
+
+header nav img:hover{
+    transition: 0.3s ease;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* CATEGORIES */
+
+header .category{
+    padding-top: 0.3rem;
+}
+
+header .category ul li a{
+    color: var(--black);
+    text-decoration: none;  
+    font-size: 0.8rem;
+    font-weight: 400;
+
+}
+
+header .category ul li a:hover{
+    /* font-weight: 500; */
+    transition: 0.3s ease;
+    opacity: 0.5;
+    border-bottom: 1px solid #000;
+}
+
+
+
+/* ACTION BUTTONS */
+
+header .actions-buttons ul li{
+    padding: 0 1rem;
+}
+
+header .actions-buttons ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+header .actions-buttons ul li a i, header .actions-buttons ul li a p{
+    font-size: 0.8rem;
+}
+
+header .actions-buttons ul li a:hover{
+    transition: 0.3s ease;
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .topBar{
     background: var(--cream);
     color: var(--black);
@@ -178,6 +297,7 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
     position: relative;
 }
 
+
 #categories .accordion .accordion-item{
     border: none;
 }
@@ -185,16 +305,20 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 #categories .accordion .accordion-item h2 p{
     background: transparent;
     font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    padding: 1rem;
+    margin: 0;
 }
 
 #categories .accordion .accordion-item .accordion-body{
+    
     padding: 0;
 }
 
 #categories .accordion .accordion-item .accordion-body ul li{
     text-align: center;
+    padding: 0.3rem;
 }
 
 #categories .accordion .accordion-item .accordion-body ul li a{

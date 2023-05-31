@@ -44,7 +44,7 @@
     <!-- JQUERY -->
     <script src="views/js/jquery-3.6.4.min.js"></script>
     <!-- TEMPLATE JS -->
-    <script src="views/js/template.js"></script>
     <script src="views/js/header.js"></script>
+    <script src="views/js/template.js"></script>
 </body>
 </html>

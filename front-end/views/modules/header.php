@@ -1,16 +1,84 @@
-<!-- <div class="container-fluid topBar" id="top"> -->
+<?php
+       $categories = ProductsController::ctrShowCategories();
+?>
 
-    <!-- <div class="container"> -->
+
+<div class="bg"></div>
+<header class="container-fluid d-flex fixed-top">
+    
+    <nav class="col-6 col-md-4">
+
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list bi-3xl"></i>  </button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <!-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> -->
+                <button type="button" class="btn-close justify-content-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul id='categoryValue' class="d-flex justify-content-evenly">
+                    <?php
+                        foreach ($categories as $key => $value) {
+                           
+                            echo "<li><a categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
+                            // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
+                        }
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- <a href="">
+            <i class="bi bi-list bi-3xl"></i>  
+        </a> -->
+        <img class="header-logo" src="http://localhost/e-commerce/back-end/views/img/template/logo-2.png" alt="My logo" class="logo">
+
+    </nav>
+
+    <div class="col-4 category d-md-block d-none">
+        <ul class="d-flex justify-content-evenly">
+            <?php
+                foreach ($categories as $key => $value) {
+                    echo "<li><a href='{$value["route"]}'>{$value["category"]}</a></li>";
+                }
+            ?>
+        </ul>
+    </div>
+
+    <div class="col-6 col-md-4 actions-buttons pt-2">
+        <ul class="d-flex justify-content-end">
+            <li>
+                <a class="d-flex" href="">
+                    <i class="bi bi-search"></i><p class="ps-1 d-none d-lg-block">Buscar</p>  
+                </a>
+            </li>
+            <li>
+                <a class="d-flex" href="">
+                    <i class="bi bi-person-circle"></i><p class="ps-1 d-none d-lg-block">Iniciar Sesión</p>  
+                </a>
+            </li>
+            <li>
+                <a class="d-flex" href="">
+                    <i class="bi bi-bag"></i><p class="ps-1 d-none d-lg-block">Cesta</p>  
+                </a>
+            </li>
+            <!-- <li><a href=""><i class="bi bi-person-circle"></i> Iniciar Sesión</a></li>
+            <li><a href=""><i class="bi bi-bag"></i> Cesta</a></li> -->
+        </ul>
+    </div>
+
+</header>
+    
     <?php
         $template = TemplateController::ctrTemplateStyle();
 
     ?>
 
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row topBar">
             <div class="col-12 initial-banner">
-                <h5><?php echo $template['topBarText'];?></h5>
+                <h5><?php //echo $template['topBarText'];?></h5>
             </div>
         </div>
 
@@ -20,15 +88,15 @@
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social d-flex justify-content-center justify-content-sm-start">
                 <ul class="float-start">
                     <?php
-                        foreach (json_decode($template['mainBarSocialNetwork'], true) as $key => $value) {
-                            echo "
-                                <li>
-                                    <a href='{$value["url"]}'>
-                                        <i class='bi {$value["network"]} socialNetwork' aria-hidden='true'></i>
-                                    </a>
-                                </li>
-                            ";
-                        }
+                        // foreach (json_decode($template['mainBarSocialNetwork'], true) as $key => $value) {
+                        //     echo "
+                        //         <li>
+                        //             <a href='{$value["url"]}'>
+                        //                 <i class='bi {$value["network"]} socialNetwork' aria-hidden='true'></i>
+                        //             </a>
+                        //         </li>
+                        //     ";
+                        // }
                     ?>
                 </ul>
             </div>
@@ -41,60 +109,55 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 
 
-    <!-- </div> -->
-
-    
-<!-- </div> -->
 
 <!-- HEADER -->
 
-<header class="container-fluid" id="header">
-    <!-- <div class="container"> -->
+<!-- <header class="container-fluid" id="header"> -->
 
     <!-- LOGO -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-center" id="logo">
                 <a href="#">
-                    <img src="http://localhost/e-commerce/back-end/<?php echo $template["icon"]; ?>" class="img-responsive">
+                    <img src="http://localhost/e-commerce/back-end/<?php //echo $template["icon"]; ?>" class="img-responsive">
                 </a>
             </div>
 
         </div>
 
-    </div>
+    </div> -->
 
 
 
-    <div class="row " id="headerMenu">
+    <!-- <div class="row " id="headerMenu"> -->
 
         <!-- CATEGORIES BUTTON -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center justify-content-md-start" id="categoriesTitle">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center justify-content-md-start" id="categoriesTitle">
             <p>Categories
                 <span class="align-middle">
                     <i class="bi bi-list"></i>
                 </span>
             </p>
-        </div>
+        </div> -->
 
         <!-- SEARCHING BOX -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 input-group " id="searchingBox">
-            <input type="search" name="search" class="form-control" placeholder="Search">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 input-group " id="searchingBox">
+            <input type="search" name="search" class="form-control" placeholder="Search"> -->
             <!-- <span class="input-group"> -->
                 <!-- <a href="#"> -->
-                    <button class="btn btn-dark " type="submit">
+                    <!-- <button class="btn btn-dark " type="submit">
                         <i class="bi bi-search"></i>
-                    </button>
+                    </button> -->
                 <!-- </a> -->
             <!-- </span> -->
-        </div>
+        <!-- </div> -->
 
         <!-- SHOPPING BAG -->
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center justify-content-md-end" id="shoppingBag">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center justify-content-md-end" id="shoppingBag">
                 <a href="#" class="">
                     <button class="btn btn-default">
                         <i class="bi bi-bag" aria-hidden="true"></i>
@@ -104,89 +167,50 @@
         </div>
 
 
-    </div>
-
-
-       
-
-
+    </div> -->
 
 
         <!-- Categories -->
-        <div class="col-12" id="categories">
+    <!-- <div class='col-12' id='categories'>
+        <div class='col-lg-2 col-md-3 col-sm-12 col-xs-12'>
+            <div class='accordion'> -->
+                <?php
+                    // $categories = ProductsController::ctrShowCategories();
+                    
+                    // foreach ($categories as $key => $value) {
+                    //     echo "
+                        
+                    //         <div class='accordion-item'>
+                            
+                    //             <h2 class='accordion-header' id='heading{$value["idcategory"]}'>
+                    //             <p class='accordion-button pixelCategories collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapse{$value["idcategory"]}' aria-expanded='true' aria-controls='collapse{$value["idcategory"]}'>
+                    //                 {$value["category"]}
+                    //             </p>
+                    //             </h2>
+                            
+                    //             <div id='collapse{$value["idcategory"]}' class='accordion-collapse collapse' aria-labelledby='heading{$value["idcategory"]}' data-bs-parent='#accordionExample'>
+                    //                 <div class='accordion-body'>
+                    //                     <ul class='list-group list-group-flush'>";
+                    //                     $subcategories = ProductsController::ctrShowSubcategories($value["idcategory"]);
+                    //                     foreach ($subcategories as $key => $value) {
+                    //                         echo "<li class='list-group-item pixelSubCategorie'><a href='{$value["route"]}' class='pixelSubCategories'>{$value["subcategory"]}</a></li>";
+                    //                     }
+                    //                             echo"
+                    //                     </ul>
+                    //                 </div>
+                    //             </div>
 
-
-            <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
-
-
-                <div class="accordion">
-
-
-                    <div class="accordion-item">
-
-                        <h2 class="accordion-header" id="headingOne">
-                            <p class="accordion-button pixelCategories collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Categorie 1
-                            </p>
-                        </h2>
-
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <p class="accordion-button pixelCategories collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                Categorie 2
-                            </p>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <p class="accordion-button pixelCategories collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                Categorie 3
-                            </p>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                    <li class="list-group-item pixelSubCategorie"><a href="#" class="pixelSubCategories">Lorem Impsum</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
+                    //         </div>
+            
+                                        
+                                        
+                                        
+                    //     ";
+                    // }               
+                            
+                ?>
+                <!-- </div>
             </div>
-
-
-
         </div>
-
         
-</header>
+</header> -->
