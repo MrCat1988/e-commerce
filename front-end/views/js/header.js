@@ -9,10 +9,11 @@
 
 $("#categoryValue li a").on("click",function(){
     let categoryId = $(this).attr("categoryId");
-    console.log(categoryId);
+    let categoryRoute = $(this).attr("route");
     let dataRequest = new FormData();
-    dataRequest = ("categoryId", categoryId);
-
+    dataRequest.append("categoryId", categoryId);
+    let subcategoryList = document.getElementById("subCategoryList");
+    subcategoryList.innerHTML = '';
     $.ajax({
         url: 'ajax/products.ajax.php',
         method: "POST",
@@ -22,7 +23,15 @@ $("#categoryValue li a").on("click",function(){
         processData: false,
         dataType: "json",
         success: function(data) {
-            console.log(data);
+            data.forEach(element => {
+                let liElement = document.createElement("li");
+                let aElement = document.createElement("a");
+                aElement.appendChild(document.createTextNode(element.subcategory));
+                aElement.href = element.route;
+                liElement.appendChild(aElement);
+                subcategoryList.appendChild(liElement);
+
+            });
         }
     });
 

@@ -1,5 +1,7 @@
 <?php
         $template = TemplateController::ctrTemplateStyle();
+        $route = Route::ctrRoute();
+        // $route -> ctrRoute();  
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +23,7 @@
     <!-- Google icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Own stylesheet -->
-    <link rel="stylesheet" href="views/css/styles.css">
+    <link rel="stylesheet" href= "<?php echo $route; ?>views/css/styles.css">
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -32,7 +34,47 @@
     <!-- HEADER -->
     <?php
         include("modules/header.php");
+
+        // DYNAMIC CONTENT
+        $routes = array();
+        $auxRoute = null;
+        
+        
+        if (isset($_GET['route'])) {
+            $routes = explode("/", $_GET['route']);
+            // CATEGORIES FRIENDLY URL
+            $item = 'route';
+            $value = $routes[0];
+            $categoriesRoutes = ProductsController::ctrShowCategories($item, $value);
+            if ($routes[0] == $categoriesRoutes['route']){
+                $auxRoute = $routes[0];
+            }
+            // SUBCATEGORY FRIENDLY URL
+            $subcategoryRoutes = ProductsController::ctrShowSubcategories($item, $value);
+            foreach ($subcategoryRoutes as $key => $value) {
+                if ($routes[0] == $value['route']){
+                    $auxRoute = $routes[0];
+                }
+            }
+            // echo '<pre>';
+            // var_dump($subcategoryRoutes);
+            // echo '</pre>';
+
+            // WHITE LIST
+            if($auxRoute != null) {
+                include("modules/products.php");
+            }
+            else{
+                include("modules/404.php");
+            }
+
+        }
+
+
+
+
     ?>
+
 
 
 
@@ -42,9 +84,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     <!-- JQUERY -->
-    <script src="views/js/jquery-3.6.4.min.js"></script>
+    <script src="<?php echo $route; ?>views/js/jquery-3.6.4.min.js"></script>
     <!-- TEMPLATE JS -->
-    <script src="views/js/header.js"></script>
-    <script src="views/js/template.js"></script>
+    <script src="<?php echo $route; ?>views/js/header.js"></script>
+    <script src="<?php echo $route; ?>views/js/template.js"></script>
 </body>
 </html>

@@ -6,8 +6,9 @@
         // ======== GET SUBCATEGORIES ======
         public $categoryId;
         public function ajaxGetSubcategories(){
-            $valor = $this-> categoryId;
-            $response = ProductsController::ctrShowSubcategories($valor);
+            $item = 'category_idcategory';
+            $value = $this->categoryId;
+            $response = ProductsController::ctrShowSubcategories($item, $value);
             echo json_encode($response);
         }
     }

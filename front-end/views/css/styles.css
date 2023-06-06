@@ -30,7 +30,7 @@ body, html {
   }
 /* BACKGROUND */
 .bg{
-    background-image: url('http://localhost/e-commerce/back-end/views/img/template/background.jpg');
+    background-image: url('http://localhost/e-commerce/back-end/views/img/template/background-2.jpg');
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -41,8 +41,8 @@ body, html {
 /* MENU */
 
 header{
-    /* background: var(--white); */
-    padding: 1rem;
+    /* background: rgba(255, 255, 255, 1); */
+    padding: 1rem 1rem 0rem 1rem;
     vertical-align: top;
     position: absolute;
     top: 0;
@@ -61,24 +61,32 @@ header .offcanvas .offcanvas-body ul li:hover{
     border-bottom: 1px solid #000;
 }
 
-header nav a{
+/* OFFCANVAS LIST */
+
+header .offcanvas #subCategoryList li{
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+header .offcanvas #subCategoryList li a{
     text-decoration: none;
-    color: var(--black);
+    color: #000;
 }
 
-header nav a i{
-    font-size: 1.5rem;
-    vertical-align: middle;
-}
-
-header nav a i:hover{
-    transition: 0.3s ease;
+header .offcanvas #subCategoryList li:hover{
+    border-bottom: none;
+    /* background: #454545;
+    color: var(--white); */
     opacity: 0.5;
+    transition: 0.3s ease;
 }
+
+/* LOGO */
 
 header nav img{
     height: 1rem;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
 }
 
 header nav img:hover{
@@ -103,9 +111,9 @@ header .category ul li a{
 
 header .category ul li a:hover{
     /* font-weight: 500; */
-    transition: 0.3s ease;
     opacity: 0.5;
     border-bottom: 1px solid #000;
+    transition: 0.3s ease;
 }
 
 
