@@ -10,7 +10,7 @@
     
     <nav class="col-6 col-md-4">
 
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list bi-3xl"></i>  </button>
+        <button class="btn" id="categories-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list bi-3xl"></i>  </button>
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
                 <!-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> -->
@@ -35,11 +35,10 @@
         </div>
 
 
-        <!-- <a href="">
-            <i class="bi bi-list bi-3xl"></i>  
-        </a> -->
+        <a href="http://localhost/e-commerce/front-end/">
+            <img class="header-logo" src="http://localhost/e-commerce/back-end/views/img/template/logo-2.png" alt="My logo" class="logo">
+        </a>
         
-        <img class="header-logo" src="http://localhost/e-commerce/back-end/views/img/template/logo-2.png" alt="My logo" class="logo">
     </nav>
 
     <div class="col-4 category d-md-block d-none">

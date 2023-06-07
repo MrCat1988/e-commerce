@@ -1,9 +1,4 @@
-<div class="container 404 p-3">
-    <div class="d-flex justify-content-center">
-        <p class="fs-1 fw-bold">Error 404</p>
-    </div>
-    <div class="content">
-    <div class="text-content">
-        <p class="text-center fs-2">El recurso que buscas no se encuentra disponible.</p>
-    </div>
+<div class="container-fluid error-404 position-absolute top-0">
+    <p class="fs-1 fw-bold text-center error-title">Error 404</p>
+    <p class="text-center fs-3 error-message">El recurso que buscas no se encuentra disponible.</p>
 </div>

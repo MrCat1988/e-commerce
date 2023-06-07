@@ -1,15 +1,22 @@
-// $("#categoriesTitle").on("click",function(){
-//     if(window.matchMedia("(max-width:768px)").matches){
-//         $("#categoriesTitle").after($("#categories").slideToggle("fast"));
-//     }else{
-//         $("#header").after($("#categories").slideToggle("fast"));
-//     }
-// })
+// Scrolled effect, change background nav color
+document.addEventListener("scroll", ()=>{
+    const header = document.querySelector("header");
+    if(window.scrollY > 0){
+        header.classList.add('scrolled');
+    }else{
+        header.classList.remove('scrolled');
+    }
+})
 
+// LOAD SUBCATEGORIES FROM 1ST ELEMENT OF CATEGORIES
+$("#categories-button").on("click",function(){
+    // alert("Loading categories");
+})
 
+// LOAD SUBCATEGORIES LIST
 $("#categoryValue li a").on("click",function(){
     let categoryId = $(this).attr("categoryId");
-    let categoryRoute = $(this).attr("route");
+    // let categoryRoute = $(this).attr("route");
     let dataRequest = new FormData();
     dataRequest.append("categoryId", categoryId);
     let subcategoryList = document.getElementById("subCategoryList");
@@ -38,3 +45,5 @@ $("#categoryValue li a").on("click",function(){
 
 
 })
+
+
