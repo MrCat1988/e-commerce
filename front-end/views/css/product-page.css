@@ -1,0 +1,41 @@
+/* PRODUCTS PAGE */
+.products-page{
+    background: #F2F2F2;
+    padding: 5rem 0 0 0;
+}
+
+.product picture .size-selector .sizes{
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.product picture .size-selector .sizes ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
+    padding: 0.5rem;
+}
+
+.product picture .size-selector .sizes ul li a:hover{
+    background: #9BABB8;
+}
+
+.product .product-price{
+    text-transform: uppercase;
+    /* font-size: 0.8rem; */
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+}
+
+
+
+
+
+/* REVISAR EFECTO HOVER */
+/* .product picture .size-selector .sizes{
+    display: none;
+}
+
+.product picture img:hover + .product picture .size-selector .sizes{
+    display: none;
+    background: #000;
+} */

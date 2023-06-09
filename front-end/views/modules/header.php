@@ -2,6 +2,11 @@
         $item = 'route';
         $value = null;
         $categories = ProductsController::ctrShowCategories($route, $value);
+
+        
+        $serverRoute = Route::ctrServerRoute();
+        // $route -> ctrRoute();  
+
 ?>
 
 
@@ -36,7 +41,7 @@
 
 
         <a href="http://localhost/e-commerce/front-end/">
-            <img class="header-logo" src="http://localhost/e-commerce/back-end/views/img/template/logo-2.png" alt="My logo" class="logo">
+            <img class="header-logo" src="<?php echo $serverRoute; ?>views/img/template/logo.png" alt="My logo" class="logo">
         </a>
         
     </nav>
