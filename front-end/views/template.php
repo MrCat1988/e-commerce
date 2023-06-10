@@ -72,6 +72,7 @@
 
         }
 
+        include("modules/footer.php");
 
 
 
