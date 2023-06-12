@@ -1,11 +1,11 @@
 <footer class="container-fluid bg-black">
     <div class=" p-5">
-        <ul class="text-white d-flex justify-content-evenly py-3 border-top border-bottom border-light">
-            <li>AYUDA</li>
-            <li>EMPRESA</li>
-            <li>CONTACTO</li>
-            <li>VISÍTANOS</li>
-            <li>PREGUNTAS FRECUENTES</li>
+        <ul class="footer-menu text-white d-flex flex-column flex-md-row justify-content-evenly py-3 border-top border-bottom border-light text-center gap-2">
+            <li><a href="">AYUDA</a> </li>
+            <li><a href="">EMPRESA</a> </li>
+            <li><a href="">CONTACTO</a> </li>
+            <li><a href="">VISÍTANOS</a> </li>
+            <li><a href="">PREGUNTAS FRECUENTES</a>  </li>
         </ul>
         <p class="text-white text-center">ENCUENTRANOS EN:</p>
         <ul class="text-white text-center d-flex justify-content-center gap-3">
