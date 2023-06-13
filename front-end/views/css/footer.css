@@ -9,3 +9,6 @@ footer .footer-menu li a:hover{
     transition: 0.3s ease;
 }
 
+footer .footer-social li a i{
+    font-size: 1.5rem;
+}

@@ -8,11 +8,14 @@
             <li><a href="">PREGUNTAS FRECUENTES</a>  </li>
         </ul>
         <p class="text-white text-center">ENCUENTRANOS EN:</p>
-        <ul class="text-white text-center d-flex justify-content-center gap-3">
+        <ul class="footer-social text-white text-center d-flex justify-content-center gap-3">
             <li><a href="" class="text-decoration-none text-white"><i class="bi bi-facebook"></i></a></li>
             <li><a href="" class="text-decoration-none text-white"><i class="bi bi-instagram"></i></a></li>
         </ul>
 
+    </div>
+    <div class="copyright p-3">
+        <p class="text-white text-center">COPYRIGHT © ZOE <?php echo date("Y"); ?></p>
     </div>
 
 </footer>
