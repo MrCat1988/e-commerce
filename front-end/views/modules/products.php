@@ -205,5 +205,5 @@
 
     </div>
 
-    <p class="text-center fs-3 error-message">Aquí van los productos.</p>
+    <!-- <p class="text-center fs-3 error-message">Aquí van los productos.</p> -->
 </div>
