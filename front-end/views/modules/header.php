@@ -10,7 +10,7 @@
 ?>
 
 
-<div class="bg"></div>
+<!-- <div class="bg"></div> -->
 <header class="container-fluid d-flex fixed-top">
     
     <nav class="col-6 col-md-4">

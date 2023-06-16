@@ -1,8 +1,55 @@
 <?php
         $serverRoute = Route::ctrServerRoute();
 ?>
-<div class="container-fluid products-page position-absolute top-0">
-    <!-- <p class="fs-1 fw-bold text-center error-title">Página de productos</p> -->
+
+
+<div class="container-fluid">
+    <div class="row products d-flex justify-content-evenly">
+
+        <!-- PRODUCT -->
+        <div class="px-5 py-3 col-sm-6 col-lg-4">
+            <div class="product position-relative">
+                <img id="product-image" class="img-fluid" src="<?php echo $serverRoute; ?>views/img/products/1618221800_1_1_1.jpg" alt="">
+                <div class="ribbon position-absolute top-0">
+                    <p>NEW</p>
+                </div>
+
+                <div id="sizes" class="sizes position-absolute bottom-0 p-3 w-100 d-none">
+                    <p class="text-center">Selecciona tu talla</p>
+                    <ul class="d-flex justify-content-evenly">
+                        <li><a class="text-decoration-none text-black" href="">XS</a></li>
+                        <li><a class="text-decoration-none text-black" href="">S</a></li>
+                        <li><a class="text-decoration-none text-black" href="">M</a></li>
+                        <li><a class="text-decoration-none text-black" href="">L</a></li>
+                        <li><a class="text-decoration-none text-black" href="">XL</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="price-info d-flex justify-content-between">
+                <p class="description">Vestido negro</p>
+                <small class="price">USD 35.00</small>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+        
+    
+</div>
+<!-- <div class="container-fluid products-page position-absolute top-0">
 
 
 
@@ -205,5 +252,5 @@
 
     </div>
 
-    <!-- <p class="text-center fs-3 error-message">Aquí van los productos.</p> -->
-</div>
+    <p class="text-center fs-3 error-message">Aquí van los productos.</p>
+</div> -->

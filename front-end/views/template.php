@@ -72,6 +72,8 @@
                 include("modules/404.php");
             }
 
+        }else{
+            include("modules/home.php");
         }
 
         include("modules/footer.php");
@@ -93,5 +95,7 @@
     <!-- TEMPLATE JS -->
     <script src="<?php echo $route; ?>views/js/header.js"></script>
     <script src="<?php echo $route; ?>views/js/template.js"></script>
+    <script src="<?php echo $route; ?>views/js/products.js"></script>
+
 </body>
 </html>

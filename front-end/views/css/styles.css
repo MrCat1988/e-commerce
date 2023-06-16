@@ -44,8 +44,8 @@ header{
     /* background: rgba(255, 255, 255, 1); */
     padding: 1rem 1rem 0rem 1rem;
     vertical-align: top;
-    position: absolute;
-    top: 0;
+    /* position: absolute; */
+    /* top: 0;  */
     transition: background-color 0.4s ease-in-out;
 }
 
