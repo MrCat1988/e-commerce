@@ -8,6 +8,32 @@
     background: rgba(255, 255, 255, 0.7);
 }
 
+.products .product .sizes ul li a{
+    padding: 0.4rem;
+
+}
+
+.products .product .sizes ul li a:hover{
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.products .price-info{
+    /* background: #000; */
+    padding-top: 0.1rem;
+}
+
+.products .price-info .description{
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.products .price-info .price{
+    font-size: 0.9rem;
+    /* font-style: italic; */
+    font-weight: 300;
+}
+
 
 
 /* .product picture .size-selector .sizes{

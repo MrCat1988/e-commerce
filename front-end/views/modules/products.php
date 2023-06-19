@@ -9,7 +9,9 @@
         <!-- PRODUCT -->
         <div class="px-5 py-3 col-sm-6 col-lg-4">
             <div class="product position-relative">
-                <img id="product-image" class="img-fluid" src="<?php echo $serverRoute; ?>views/img/products/1618221800_1_1_1.jpg" alt="">
+                <a href="">
+                    <img id="product-image" class="img-fluid" src="<?php echo $serverRoute; ?>views/img/products/1618221800_1_1_1.jpg" alt="">
+                </a>
                 <div class="ribbon position-absolute top-0">
                     <p>NEW</p>
                 </div>
@@ -28,7 +30,7 @@
             </div>
             <div class="price-info d-flex justify-content-between">
                 <p class="description">Vestido negro</p>
-                <small class="price">USD 35.00</small>
+                <small class="price">35.00 USD</small>
             </div>
         </div>
 
