@@ -26,6 +26,7 @@
     font-size: 0.9rem;
     font-weight: 300;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 .products .price-info .price{
@@ -34,7 +35,13 @@
     font-weight: 300;
 }
 
+.products .discount-info p{
+    font-size: 0.8rem;
+}
 
+.products .discount-info .transparent{
+    color: transparent;
+}
 
 /* .product picture .size-selector .sizes{
     background: rgba(255, 255, 255, 0.80);

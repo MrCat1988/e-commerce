@@ -1,22 +1,90 @@
 <?php
-        $serverRoute = Route::ctrServerRoute();
+    setlocale(LC_MONETARY,"en_US");
+    $serverRoute = Route::ctrServerRoute();
+    $item = null;
+    $value = null;
+    $products = ProductsController::ctrShowProducts($item, $value);
+        // echo '<pre>';
+        // var_dump($products);
+        // echo '</pre>';
 ?>
 
 
 <div class="container-fluid">
     <div class="row products d-flex justify-content-evenly">
 
+
+
+
+    <?php
+        foreach ($products as $key => $value) {
+            $new = $value["new"] == 1 ? 'NEW' : '';
+            $price = number_format($value["price"],2);
+            $discount = number_format($value["discount"],0);
+            $discount_price = number_format($value["discount_price"],2);
+            echo "
+                <div class='px-5 py-3 col-sm-6 col-lg-4'>
+                    <div class='product position-relative'>
+                        <a href='{$value["route"]}' idProduct='{$value["idproduct"]}'>
+                            <img id='product-image' class='img-fluid' src='{$serverRoute}{$value["cover_img"]}' alt=''>
+                        </a>
+                        <div class='ribbon position-absolute top-0'>
+                            <p>{$new}</p>
+                        </div>
+    
+                        <div id='sizes' class='sizes position-absolute bottom-0 px-3 w-100 d-none'>
+                            <p class='text-center mb-0 py-1'>Selecciona tu talla</p>
+                            <ul class='d-flex justify-content-evenly'>";
+
+            $sizes = json_decode($value['details'], true);  
+            foreach ($sizes as $size => $sizeDetail) { echo "<li><a class='text-decoration-none text-black' href='{$sizeDetail[0]['short']}'>{$sizeDetail[0]['short']}</a></li>"; }
+            echo"
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='price-info d-flex justify-content-between'>    
+                    ";
+            
+            if ($value["is_discount"]  == 0) {
+                echo "  
+                            <p class='description'>{$value["title"]}</p>
+                            <small class='price'>{$price} USD</small>
+                        </div>
+                        <div class='discount-info d-flex justify-content-end'>
+                            <p class='discount px-2 my-0 transparent'> 0 </p>
+                            <p class='normal-price text-decoration-line-through my-0 transparent'> 0</p>
+                        </div>
+                    </div>
+                ";
+            }else{
+                echo "  
+                            <p class='description'>{$value["title"]}</p>
+                            <small class='price'>{$discount_price} USD</small>
+                        </div>
+                        <div class='discount-info d-flex justify-content-end'>
+                            <p class='discount px-2 my-0 bg-black text-white'> -{$discount}%</p>
+                            <p class='normal-price text-decoration-line-through my-0 bg-black text-white'> {$price} USD</p>
+                        </div>
+                    </div>
+                ";
+            }
+
+
+        }
+    ?>
+
         <!-- PRODUCT -->
-        <div class="px-5 py-3 col-sm-6 col-lg-4">
+        <!-- <div class="px-5 py-3 col-sm-6 col-lg-4">
             <div class="product position-relative">
                 <a href="">
-                    <img id="product-image" class="img-fluid" src="<?php echo $serverRoute; ?>views/img/products/1618221800_1_1_1.jpg" alt="">
+                    <img id="product-image" class="img-fluid" src="<?php echo $serverRoute; ?>views/img/products/1618221800_2_3_1.jpg" alt="">
                 </a>
                 <div class="ribbon position-absolute top-0">
                     <p>NEW</p>
                 </div>
 
-                <div id="sizes" class="sizes position-absolute bottom-0 p-3 w-100 d-none">
+                <div id="sizes" class="sizes position-absolute bottom-0 px-3 w-100 d-none">
                     <p class="text-center">Selecciona tu talla</p>
                     <ul class="d-flex justify-content-evenly">
                         <li><a class="text-decoration-none text-black" href="">XS</a></li>
@@ -30,9 +98,13 @@
             </div>
             <div class="price-info d-flex justify-content-between">
                 <p class="description">Vestido negro</p>
-                <small class="price">35.00 USD</small>
+                <small class="price">25.00 USD</small>
             </div>
-        </div>
+            <div class="discount-info d-flex justify-content-end">
+                <p class="discount px-2 my-0 bg-black text-white"> -40%</p>
+                <p class="normal-price text-decoration-line-through my-0 bg-black text-white"> 35.00 USD</p>
+            </div>
+        </div> -->
 
 
 

@@ -42,6 +42,7 @@
         // DYNAMIC CONTENT
         $routes = array();
         $auxRoute = null;
+        $productInfo = null;
         
         
         if (isset($_GET['route'])) {
@@ -60,13 +61,17 @@
                     $auxRoute = $routes[0];
                 }
             }
-            // echo '<pre>';
-            // var_dump($subcategoryRoutes);
-            // echo '</pre>';
+            // PRODUCTS FRIENDLY URL
+            $productsRoutes = ProductsController::ctrProductInfo($item, $value);
+            if ($routes[0] == $productsRoutes['route']){
+                $productInfo = $routes[0];
+            }
 
             // WHITE LIST
             if($auxRoute != null) {
                 include("modules/products.php");
+            }elseif($productInfo != null){
+                include("modules/product-info.php");
             }
             else{
                 include("modules/404.php");
