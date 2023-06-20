@@ -5,7 +5,7 @@
             $value = $_GET["route"];
             $productsRoutes = ProductsController::ctrProductInfo($item, $value);
             echo '<pre>';
-            var_dump($productsRoutes);
+            var_dump($routes[0]);
             echo '</pre>';
 
         ?>
