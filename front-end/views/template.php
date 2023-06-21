@@ -31,6 +31,9 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+    <!-- JQUERY -->
+    <script src="<?php echo $route; ?>views/js/jquery-3.6.4.min.js"></script>
+
 
 </head>
 <body>
@@ -95,8 +98,7 @@
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    <!-- JQUERY -->
-    <script src="<?php echo $route; ?>views/js/jquery-3.6.4.min.js"></script>
+
     <!-- TEMPLATE JS -->
     <script src="<?php echo $route; ?>views/js/header.js"></script>
     <script src="<?php echo $route; ?>views/js/template.js"></script>

@@ -11,6 +11,23 @@
             $response = ProductsController::ctrShowSubcategories($item, $value);
             echo json_encode($response);
         }
+        // ======== GET PRODUCTS ======
+        public $categoryIdRequest;
+        public $subcategoryIdRequest;
+        public $limit;
+        public $offset;
+        public function ajaxGetProducts(){
+            if ($this -> categoryIdRequest) {
+                $item = 'category_idcategory';
+                $value = $this -> categoryIdRequest;
+            }else{
+                $item = 'subcategory_idsubcategory';
+                $value = $this -> subcategoryIdRequest;
+            }
+            $response = ProductsController::ctrShowProducts($item, $value);
+            echo json_encode($response);
+        }
+
     }
     // GET CATEGORIES
 
@@ -19,4 +36,13 @@
         $id = new ProductsAjax();
         $id -> categoryId = $_POST["categoryId"]; 
         $id -> ajaxGetSubcategories();
+    }
+    // GET PRODUCTS
+    if(isset($_POST["categoryIdRequest"]) || isset($_POST["subcategoryIdRequest"])){
+        $products = new ProductsAjax();
+        $products -> categoryIdRequest = $_POST["categoryIdRequest"];
+        $products -> subcategoryIdRequest = $_POST["subcategoryIdRequest"];
+        $products -> limit = $_POST["limit"];
+        $products -> offset = $_POST["offset"];
+        $products -> ajaxGetProducts();
     }

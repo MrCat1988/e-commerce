@@ -22,7 +22,7 @@
 
 
 <div class="container-fluid">
-    <div class="row products d-flex justify-content-evenly">
+    <div class="row products d-flex justify-content-evenly" categoryId='<?php echo $categories["idcategory"]; ?>' subCategoryId='<?php echo $subCategories[0]["idsubcategory"]; ?>'>
 
 
         
@@ -135,7 +135,7 @@
                         <li><a class="text-decoration-none text-black" href="">XL</a></li>
                     </ul>
                 </div>
-
+ 
             </div>
             <div class="price-info d-flex justify-content-between">
                 <p class="description">Vestido negro</p>
@@ -164,3 +164,4 @@
         
     
 </div>
+<script src="views/js/products-load.js"></script>
