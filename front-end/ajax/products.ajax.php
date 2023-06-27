@@ -24,7 +24,7 @@
                 $item = 'subcategory_idsubcategory';
                 $value = $this -> subcategoryIdRequest;
             }
-            $response = ProductsController::ctrShowProducts($item, $value);
+            $response = ProductsController::ctrShowProducts($item, $value, $this -> limit, $this -> offset);
             echo json_encode($response);
         }
 

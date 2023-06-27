@@ -6,23 +6,23 @@
     $categories = ProductsController::ctrShowCategories($item1, $value1);
 
 
-    if($categories){
-        $item = 'category_idcategory';
-        $value = $categories["idcategory"];
-        $products = ProductsController::ctrShowProducts($item, $value);
-    }else{
-        $subCategories = ProductsController::ctrShowSubcategories($item1, $value1);
-        $item = 'subcategory_idsubcategory';
-        $value = $subCategories[0]["idsubcategory"];
-        $products = ProductsController::ctrShowProducts($item, $value);
-    }
+    // if($categories){
+    //     $item = 'category_idcategory';
+    //     $value = $categories["idcategory"];
+    //     $products = ProductsController::ctrShowProducts($item, $value);
+    // }else{
+    //     $subCategories = ProductsController::ctrShowSubcategories($item1, $value1);
+    //     $item = 'subcategory_idsubcategory';
+    //     $value = $subCategories[0]["idsubcategory"];
+    //     $products = ProductsController::ctrShowProducts($item, $value);
+    // }
     
 
 ?>
 
 
 <div class="container-fluid">
-    <div class="row products d-flex justify-content-evenly" categoryId='<?php echo $categories["idcategory"]; ?>' subCategoryId='<?php echo $subCategories[0]["idsubcategory"]; ?>'>
+    <div id="products" class="row products d-flex justify-content-evenly" categoryId='<?php echo $categories["idcategory"]; ?>' subCategoryId='<?php echo $subCategories[0]["idsubcategory"]; ?>'>
 
 
         

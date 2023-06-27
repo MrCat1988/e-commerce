@@ -13,9 +13,9 @@
             return $response;
         }
         // SHOW PRODUCTS
-        static public function ctrShowProducts($item, $value){
+        static public function ctrShowProducts($item, $value, $limit, $offset){
             $table = 'products';
-            $response = ProductsModel::mdlShowProducts($table, $item, $value);
+            $response = ProductsModel::mdlShowProducts($table, $item, $value, $limit, $offset);
             return $response;
         }
         // SHOW PRODUCTS INFO

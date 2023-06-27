@@ -1,33 +1,47 @@
-
-let observer = new IntersectionObserver((entries, observer) => {
-    console.log(entries);
-},{
-    rootMargin: '0px 0px 0px 0px',
-    threshold: 1.0
-});
-
-
-
-window.onload = function(e){ 
+// window.onload = function(e){ 
 // $(document).ready(function(){
     let products;
     let categoryIdRequest = $('.products').attr("categoryId");
     let subcategoryIdRequest = $('.products').attr("subCategoryId");
-    let limit = '';
-    let offset = '';
+    let limit = 0;
+    let offset = 2;
     let productsRequest = new FormData();
-    productsRequest.append('categoryIdRequest',categoryIdRequest);
-    productsRequest.append('subcategoryIdRequest',subcategoryIdRequest);
-    productsRequest.append('limit',limit);
-    productsRequest.append('offset',offset);
     loadProducts(productsRequest);
-};
+
+    let html = '';
+
+// };
+
+
+
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            // console.log(entries);
+            limit += 2;
+            console.log(limit);
+            loadProducts(productsRequest)
+        }
+    })
+},{
+    root: null,
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.5
+});
+
+
+
+    
+
 
 
 
 function loadProducts(productsRequest){
     let productsContainer = $('.products');
-    let html = '';
+    productsRequest.append('categoryIdRequest',categoryIdRequest);
+    productsRequest.append('subcategoryIdRequest',subcategoryIdRequest);
+    productsRequest.append('limit',limit);
+    productsRequest.append('offset',offset);
     $.ajax({
             url: 'ajax/products.ajax.php',
             method: "POST",
@@ -38,7 +52,7 @@ function loadProducts(productsRequest){
             dataType: "json",
             success: function(data) {
                 if(Object.keys(data).length === 0){
-                    console.log('Hay algo aqui');
+                    // console.log('Hay algo aqui');
                     html += `
                         <div class="p-5">
                             <div class="p-5">
@@ -57,59 +71,41 @@ function loadProducts(productsRequest){
                         </div>
                     `;
                 }else{
+                    
                     data.forEach(product => {
-                        console.log(product);
-                        // console.log(product.title);
-                        // details = JSON.parse(product.details);
-                        // // console.log(details);
-                        // var keys = Object.keys(details);
-                        // for (let i = 0; i < keys.length; i++) {
-                        //     var innerKeys = Object.keys(details[keys[i]]);
-                        //     console.log(keys[i]);
-                        //     // console.log(details[keys[i]]);
-                        //     var innerDetails = details[keys[i]];
-                        //     for (let x = 0; x < innerKeys.length; x++) {
-                        //         console.log(innerKeys[x]);
-                        //         console.log(innerDetails[innerKeys[x]]);
-    
-                        //     }
-                            
-                        // }
-                        // console.log(keys.length);
-    
+                        
+                       
     
     
     
                         
                         html += `
-                                    <div class="px-5 py-3 col-sm-6 col-lg-4">
+                                    <div class="px-5 py-3 col-sm-6 col-lg-6 product-container">
                                         <div class="product position-relative">
                                             <a href="${product.route}" idproduct="${product.idproduct}">
                                                 <img id="product-image" class="img-fluid" src="http://localhost/e-commerce/back-end/${product.cover_img}" alt="">
                                             </a>
                                             <div class="ribbon position-absolute top-0">
                                                 <p>${product.new == 1 ? 'NEW' :''}</p>
-                                            </div>
-    
-    
-    
-                        
+                                                </div>
                                             <div id="sizes" class="sizes position-absolute bottom-0 px-3 w-100 d-none">
                                                 <p class="text-center mb-0 py-1">Selecciona tu talla</p>
                                                 <ul class="d-flex justify-content-evenly">
-                                                    <li><a class="text-decoration-none text-black" href="XS">XS</a></li>
-                                                    <li><a class="text-decoration-none text-black" href="S">S</a></li>
-                                                    <li><a class="text-decoration-none text-black" href="M">M</a></li>
-                                                    <li><a class="text-decoration-none text-black" href="L">L</a></li>
-                                                    <li><a class="text-decoration-none text-black" href="XL">XL</a></li>
+    
+                                                `;
+                                               
+                                                details = JSON.parse(product.details);
+                                                let sizes = Object.keys(details);
+                                                for(size in sizes){
+                                                    let stock  = details[sizes[size]].stock;
+                                                    html += `<li><a class="text-decoration-none ${stock > 0 ? 'text-black' : 'text-secondary pe-none text-decoration-line-through'}" href="${sizes[size]}">${sizes[size]}</a></li>`;
+                                                }
+
+                        html += `   
                                                 </ul>
                                             </div>
-    
-    
-    
-    
-    
                                         </div>
+                                        
                                         <div class="price-info d-flex justify-content-between">    
                                                 <p class="description">${product.title}</p>
                                                 <small class="price">${product.is_discount == 1 ? product.discount_price : product.price} USD</small>
@@ -123,18 +119,20 @@ function loadProducts(productsRequest){
                                     </div>
     
                         `;
-                        html += `<script>
-                                $(".product").on('mouseover', function(){
-                                    $(this).children()[2].classList.remove('d-none');
-                                });
-                                $(".product").on('mouseleave', function(){
-                                    $(this).children()[2].classList.add('d-none');
-                                });
-                                </script>`;
                     })
+                    
+                    document.getElementById('products').innerHTML = html;
                 }
-                productsContainer.append(html);
+                
 
-            }
-        });
+            },complete: function() {
+                $.getScript("views/js/products.js", function() {
+                    let productsOnScreen = document.querySelectorAll('.products .product-container .product img');
+                    let lastItem = productsOnScreen[productsOnScreen.length-1];
+                    observer.observe(lastItem);
+                });
+             }
+
+    });
+
 }

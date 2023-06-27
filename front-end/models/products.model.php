@@ -36,9 +36,9 @@
             $statement = "null";
         }
         // SHOW PRODUCTS
-        static public function mdlShowProducts($table, $item, $value){
+        static public function mdlShowProducts($table, $item, $value, $limit, $offset){
             if ($value != null){
-                $statement = Connection::connect() -> prepare("SELECT * FROM $table WHERE $item = :$item Limit 0, 6");
+                $statement = Connection::connect() -> prepare("SELECT * FROM $table WHERE $item = :$item LIMIT $limit, $offset");
                 $statement -> bindParam(":".$item, $value, PDO::PARAM_STR);
                 $statement -> execute();
                 if($statement -> execute()){
