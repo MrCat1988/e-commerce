@@ -1,8 +1,8 @@
 // window.onload = function(e){ 
 // $(document).ready(function(){
-    let products;
-    let categoryIdRequest = $('.products').attr("categoryId");
-    let subcategoryIdRequest = $('.products').attr("subCategoryId");
+    let products = '';
+    let categoryIdRequest = '';
+    let subcategoryIdRequest = '';
     let limit = 0;
     let offset = 2;
     let productsRequest = new FormData();
@@ -17,9 +17,7 @@
 let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting){
-            // console.log(entries);
-            limit += 2;
-            console.log(limit);
+            limit += offset;
             loadProducts(productsRequest)
         }
     })
@@ -38,6 +36,8 @@ let observer = new IntersectionObserver((entries, observer) => {
 
 function loadProducts(productsRequest){
     let productsContainer = $('.products');
+    categoryIdRequest = $('.products').attr("categoryId");
+    subcategoryIdRequest = $('.products').attr("subCategoryId");
     productsRequest.append('categoryIdRequest',categoryIdRequest);
     productsRequest.append('subcategoryIdRequest',subcategoryIdRequest);
     productsRequest.append('limit',limit);
@@ -52,7 +52,7 @@ function loadProducts(productsRequest){
             dataType: "json",
             success: function(data) {
                 if(Object.keys(data).length === 0){
-                    // console.log('Hay algo aqui');
+                    // console.log(data);
                     html += `
                         <div class="p-5">
                             <div class="p-5">
@@ -80,7 +80,7 @@ function loadProducts(productsRequest){
     
                         
                         html += `
-                                    <div class="px-5 py-3 col-sm-6 col-lg-6 product-container">
+                                    <div class="px-5 py-3 col-sm-6 col-lg-4 product-container">
                                         <div class="product position-relative">
                                             <a href="${product.route}" idproduct="${product.idproduct}">
                                                 <img id="product-image" class="img-fluid" src="http://localhost/e-commerce/back-end/${product.cover_img}" alt="">
@@ -128,8 +128,14 @@ function loadProducts(productsRequest){
             },complete: function() {
                 $.getScript("views/js/products.js", function() {
                     let productsOnScreen = document.querySelectorAll('.products .product-container .product img');
-                    let lastItem = productsOnScreen[productsOnScreen.length-1];
-                    observer.observe(lastItem);
+                    // console.log(productsOnScreen.length);
+                    if (productsOnScreen.length > 0 ) {
+                            let lastItem = productsOnScreen[productsOnScreen.length-1];
+                            observer.observe(lastItem);
+                            
+                        }else{
+                            document.getElementById('products').innerHTML = html;
+                        }
                 });
              }
 

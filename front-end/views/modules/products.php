@@ -4,20 +4,14 @@
     $item1 = 'route';
     $value1 = $routes[0];
     $categories = ProductsController::ctrShowCategories($item1, $value1);
-
-
-    // if($categories){
-    //     $item = 'category_idcategory';
-    //     $value = $categories["idcategory"];
-    //     $products = ProductsController::ctrShowProducts($item, $value);
-    // }else{
-    //     $subCategories = ProductsController::ctrShowSubcategories($item1, $value1);
-    //     $item = 'subcategory_idsubcategory';
-    //     $value = $subCategories[0]["idsubcategory"];
-    //     $products = ProductsController::ctrShowProducts($item, $value);
-    // }
-    
-
+    if($categories){
+        $item = 'category_idcategory';
+        $value = $categories["idcategory"];
+    }else{
+        $subCategories = ProductsController::ctrShowSubcategories($item1, $value1);
+        $item = 'subcategory_idsubcategory';
+        $value = $subCategories[0]["idsubcategory"];
+    }
 ?>
 
 
