@@ -35,6 +35,8 @@
     <script src="<?php echo $route; ?>views/js/jquery-3.6.4.min.js"></script>
 
 
+
+
 </head>
 <body>
     
@@ -105,6 +107,10 @@
     <script src="<?php echo $route; ?>views/js/header.js"></script>
     <script src="<?php echo $route; ?>views/js/template.js"></script>
     <script src="<?php echo $route; ?>views/js/products.js"></script>
+    <script src="<?php echo $route; ?>views/js/product-info.js"></script>
+
+
+
 
 
 
