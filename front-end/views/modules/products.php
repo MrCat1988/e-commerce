@@ -12,6 +12,8 @@
         $item = 'subcategory_idsubcategory';
         $value = $subCategories[0]["idsubcategory"];
     }
+
+    var_dump($routes[0]);
 ?>
 
 

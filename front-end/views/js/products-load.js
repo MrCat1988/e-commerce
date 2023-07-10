@@ -13,7 +13,7 @@
 // };
 
 
-
+// INFINITY SCROLLING
 let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting){
@@ -108,11 +108,11 @@ function loadProducts(productsRequest){
                                         
                                         <div class="price-info d-flex justify-content-between">    
                                                 <p class="description">${product.title}</p>
-                                                <small class="price">${product.is_discount == 1 ? product.discount_price : product.price} USD</small>
+                                                <small class="price">${product.is_discount == 1 ? parseFloat(product.discount_price).toFixed(2) : parseFloat(product.price).toFixed(2)} USD</small>
                                             </div>
                                             <div class="discount-info d-flex justify-content-end">
                                                 <p class="discount px-2 my-0 ${product.is_discount == 1 ? 'bg-black text-white' : 'transparent'}"> ${product.discount}%</p>
-                                                <p class="normal-price text-decoration-line-through my-0 ${product.is_discount == 1 ? 'bg-black text-white' : 'transparent'}"> ${product.is_discount == 1 ? product.price : ''} USD</p>
+                                                <p class="normal-price text-decoration-line-through my-0 ${product.is_discount == 1 ? 'bg-black text-white' : 'transparent'}"> ${product.is_discount == 1 ? parseFloat(product.price).toFixed(2) : ''} USD</p>
                                             </div>
                                         </div>
 

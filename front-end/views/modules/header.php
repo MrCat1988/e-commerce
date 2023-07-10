@@ -22,15 +22,27 @@
                 <button type="button" class="btn-close justify-content-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul id='categoryValue' class="d-flex justify-content-evenly">
                     <?php
-                        foreach ($categories as $key => $value) {
-                           
-                            echo "<li><a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
-                            // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
-                        }
+                        echo "<ul id='categoryValue' class='d-flex justify-content-evenly'>";
+                            foreach ($categories as $key => $value) {
+                            
+                                echo "<li><a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
+                                // echo "<li><a href='{$value["route"]}'>Ver todo</a></li>";
+
+                                // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
+                            }
+                        echo "</ul>";
+                    
+                        echo "<ul id='categoryValue' class='d-flex justify-content-evenly'>";
+                            foreach ($categories as $key => $value) {
+                            
+                                // echo "<li><a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
+                                echo "<li><a class='fs-6 fw-light text-decoration-none text-black' href='{$value["route"]}'>Ver todo</a></li>";
+
+                                // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
+                            }
+                        echo "</ul>";
                     ?>
-                </ul>
                 <ul id="subCategoryList">
                     <!-- <li>Camisetas</li>
                     <li>Leggings</li>
