@@ -27,6 +27,7 @@ html *{
 body, html {
     height: 100%;
     margin: 0;
+    background: #F2F2F2;
   }
 /* BACKGROUND */
 .bg{
@@ -66,9 +67,19 @@ header .offcanvas .offcanvas-body ul li{
     cursor: pointer;
 }
 
-header .offcanvas .offcanvas-body ul li:hover{
-    border-bottom: 1px solid #000;
+header .offcanvas .offcanvas-body ul li .see-all{
+    font-size: 1rem;
 }
+
+.selected{
+    opacity: 0.6;
+    border-bottom: #000 1px solid;
+    /* font-weight: 700; */
+}
+/* header .offcanvas .offcanvas-body ul li:hover{ */
+    /* border-bottom: 1px solid #000; */
+    /* background: #000; */
+/* } */
 
 /* OFFCANVAS LIST */
 
@@ -306,46 +317,8 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 }
 
 /* Categories list */
+#categoryValue li a{
 
-#categories{
-    display: none;
-    position: relative;
-}
-
-
-#categories .accordion .accordion-item{
-    border: none;
-}
-
-#categories .accordion .accordion-item h2 p{
-    background: transparent;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.3rem;
-    padding: 1rem;
-    margin: 0;
-}
-
-#categories .accordion .accordion-item .accordion-body{
-    
-    padding: 0;
-}
-
-#categories .accordion .accordion-item .accordion-body ul li{
-    text-align: center;
-    padding: 0.3rem;
-}
-
-#categories .accordion .accordion-item .accordion-body ul li a{
-    font-size: 0.8rem;
-    font-weight: 300;
-}
-
-
-#categories a{
-    text-decoration: none;
-    color: var(--black);
-    font-size: 0.8rem;
 }
 
 /* 404 Styles */
@@ -360,7 +333,20 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 }
 
 
+/* ALL BUTTONS AND MODALS HAVE BORDER RADIUS 0 */
+.btn, .modal-content, .list-group{
+    border-radius: 0;
+}
+  
 
+/* MODAL PRODUCT INFO GALLERY */
+#size-selector li:hover{
+    background: #EEEEEE;
+}
+
+.product-on-screen:hover{
+    cursor: pointer;
+}
 
 
 /* MEDIA QUERIES */

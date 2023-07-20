@@ -26,22 +26,14 @@
                         echo "<ul id='categoryValue' class='d-flex justify-content-evenly'>";
                             foreach ($categories as $key => $value) {
                             
-                                echo "<li><a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
-                                // echo "<li><a href='{$value["route"]}'>Ver todo</a></li>";
-
-                                // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
+                                echo "<li class='d-flex flex-column'>
+                                        <a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a>
+                                        <a class='see-all pt-2 fw-light text-decoration-none text-black' href='{$value["route"]}'>Ver todo</a>
+                                     </li>";
                             }
                         echo "</ul>";
                     
-                        echo "<ul id='categoryValue' class='d-flex justify-content-evenly'>";
-                            foreach ($categories as $key => $value) {
-                            
-                                // echo "<li><a route='{$value["route"]}' categoryId='{$value["idcategory"]}'>{$value["category"]}</a></li>";
-                                echo "<li><a class='fs-6 fw-light text-decoration-none text-black' href='{$value["route"]}'>Ver todo</a></li>";
-
-                                // echo "<p id='categoryValue' categoryId='{$value["idcategory"]}'>{$value["category"]}</p>";
-                            }
-                        echo "</ul>";
+                        
                     ?>
                 <ul id="subCategoryList">
                     <!-- <li>Camisetas</li>
@@ -62,7 +54,7 @@
         <ul class="d-flex justify-content-evenly">
             <?php
                 foreach ($categories as $key => $value) {
-                    echo "<li><a href='{$value["route"]}'>{$value["category"]}</a></li>";
+                    echo "<li><a href='{$value["route"]}' class='idCategoryFromHeader active' categoryid='{$value["idcategory"]}'>{$value["category"]}</a></li>";
                 }
             ?>
         </ul>

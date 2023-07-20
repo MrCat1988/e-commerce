@@ -16,6 +16,7 @@ $("#categories-button").on("click",function(){
 // LOAD SUBCATEGORIES LIST
 $("#categoryValue li a").on("click",function(){
     let categoryId = $(this).attr("categoryId");
+    console.log(categoryId);
     // let categoryRoute = $(this).attr("route");
     let dataRequest = new FormData();
     dataRequest.append("categoryId", categoryId);
@@ -47,3 +48,12 @@ $("#categoryValue li a").on("click",function(){
 })
 
 
+
+// ADD SELECTED CLASS TO HEADER CENTER MENU
+let idCategoryActual = $("#products").attr("categoryId");
+if(idCategoryActual != null){
+    let menuItems = document.querySelectorAll(".idCategoryFromHeader");
+    menuItems.forEach((item) => {
+        item.attributes[2].value === idCategoryActual ? item.classList.add("selected") : item.classList.remove("selected");
+    });
+}

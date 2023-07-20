@@ -27,6 +27,14 @@
             $response = ProductsController::ctrShowProducts($item, $value, $this -> limit, $this -> offset);
             echo json_encode($response);
         }
+         // GET PRODUCTS
+         public $idProduct;
+         public function ajaxGetProductInfo(){
+            $item = 'idproduct';
+            $value = $this->idProduct;
+            $response = ProductsController::ctrProductInfo($item, $value);
+            echo json_encode($response);
+        }
 
     }
     // GET CATEGORIES
@@ -45,4 +53,10 @@
         $products -> limit = $_POST["limit"];
         $products -> offset = $_POST["offset"];
         $products -> ajaxGetProducts();
+    }
+    // GET PRODUCT INFO
+    if(isset($_POST["idProduct"])){
+        $idProduct = new ProductsAjax();
+        $idProduct -> idProduct = $_POST["idProduct"]; 
+        $idProduct -> ajaxGetProductInfo();
     }
