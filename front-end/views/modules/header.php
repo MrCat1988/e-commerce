@@ -17,7 +17,7 @@
 
         <button class="btn" id="categories-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-list bi-3xl"></i>  </button>
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-            <div class="offcanvas-header">
+            <div class="offcanvas-header d-flex justify-content-end">
                 <!-- <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> -->
                 <button type="button" class="btn-close justify-content-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -63,9 +63,25 @@
     <div class="col-6 col-md-4 actions-buttons pt-2 pe-3">
         <ul class="d-flex justify-content-end">
             <li>
-                <a class="d-flex" href="">
+                <a class="d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
                     <i class="bi bi-search"></i><p class="ps-1 d-none d-lg-block">Buscar</p>  
                 </a>
+
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header d-flex justify-content-end pb-0">
+                        <!-- <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="input-group input-group-lg row">  //CAMBIAR TAMAÑO
+                            <div class="col-8 mx-auto d-flex justify-content-center">
+                                <input type="text" id="search-input" class="form-control p-2 text-center fw-lighter fs-3 rounded-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                                <span class="input-group-text rounded-0 border-0 bg-transparent" id="inputGroup-sizing-lg"><i class="bi bi-search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </li>
             <li>
                 <a class="d-flex" href="">

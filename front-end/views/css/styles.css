@@ -334,7 +334,7 @@ a, a:visited, a:ink, a:focus, a:hover, a:active {
 
 
 /* ALL BUTTONS AND MODALS HAVE BORDER RADIUS 0 */
-.btn, .modal-content, .list-group{
+.btn, .modal-content, .list-group, input{
     border-radius: 0;
 }
   
