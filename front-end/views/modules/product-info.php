@@ -71,14 +71,26 @@
 
                     </div>
                 </div>
-                <div class="col-12 py-3 d-flex justify-content-between">
-                    <span><a class="text-decoration-none text-black border-bottom" href="">Guía de tallas</a></span>
+                <div class="col-12 pt-3 pb-1 d-flex justify-content-between">
+                    <span><a class="fw-light text-decoration-none text-black border-bottom" href=""><i class="bi bi-info-circle"></i> Guía de tallas</a></span>
                     <span><i class="bi bi-bookmark pe-3" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Añadir a favoritos"></i></span>
+                </div>
+                <div class="col-12">
+                    <span><a class="fw-light text-decoration-none text-black border-bottom" href=""><i class="bi bi-info-circle"></i> Lavado y cuidado</a></span>
                 </div>
                 <div class="col-12">
                     <div class="row p-3 ">
                         <button class="btn btn-dark btn-hover-light"><i class="bi bi-bag"></i> Añadir a cesta</button>
                     </div>
+                </div>
+                <div class="col-12 d-none d-lg-block ps-3">
+                    <ul class="fw-light">
+                        <li style="list-style-type: disc;">Confeccionado con materiales reciclados.</li>
+                        <li style="list-style-type: disc;">85% Polyester</li>
+                        <li style="list-style-type: disc;">15% Elastano</li>
+                        <li style="list-style-type: disc;">Licra larga</li>
+                        <li style="list-style-type: disc;">Con diseño directamente en la tela</li>
+                    </ul>
                 </div>
 
 
